@@ -2,7 +2,7 @@
 	<div id="home">
 		<navbar class="home-navbar"><template #center>购物街</template></navbar>
 		<tab-control :titles="['流行','新款','推荐']" @tabClick="tabClick" class="tab-home-control" v-show="istabFixed"
-			ref="tabControl1" />
+			ref="tabControl1"/>
 		<scroll class="content" ref="scroll" @scroll="contentScroll" :pull-up-load="true" @pullingUp="LoadMore"
 			:probe-type="3">
 
@@ -89,10 +89,10 @@
 			/* 利用refs去获取tab-control组件的元素的*/
 		},
 		mounted() {
-		const refresh = this.debounce(this.$refs.scroll&&this.$refs.scroll.refresh,500)
-		this.$bus.$on('itemImageLoad', () => {
-			refresh()
-		})
+			const refresh = this.debounce(this.$refs.scroll && this.$refs.scroll.refresh, 500)
+			this.$bus.$on('itemImageLoad', () => {
+				refresh()
+			})
 		},
 		/* <scroll class="content" ref="scroll" @scroll="contentScroll" :pull-up-load="true"  @pullingUp="LoadMore"  :probe-type="3"> */
 		methods: {
@@ -104,7 +104,7 @@
 						func.apply(this, args)
 					}, delay)
 				}
-			
+
 			},
 			tabClick(index) {
 				switch (index) {
